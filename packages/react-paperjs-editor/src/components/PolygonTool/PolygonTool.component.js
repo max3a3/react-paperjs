@@ -88,7 +88,7 @@ class PolygonTool extends PathTool<Props> {
     }
     path.closed = true;
     path.selected = false;
-    onPathAdd(path);
+    onPathAdd(path,pathProps);
     this.path = null;
     this.selectedSegment = null;
     if (points) {

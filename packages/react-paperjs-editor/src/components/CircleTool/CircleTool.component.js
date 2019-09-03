@@ -61,7 +61,7 @@ class CircleTool extends PathTool<Props> {
         selected: false,
         ...pathProps,
       });
-      onPathAdd(path);
+      onPathAdd(path,pathProps);
       this.path = null;
     }
     onMouseUp(event);

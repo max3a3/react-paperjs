@@ -72,9 +72,9 @@ class SegmentPathTool extends PathTool<Props> {
 
   onPathAdd = () => {
     const { path } = this;
-    const { onPathAdd } = this.props;
+    const { onPathAdd,pathProps } = this.props;
     path.selected = false;
-    onPathAdd(path);
+    onPathAdd(path,pathProps);
     this.path = null;
   }
 

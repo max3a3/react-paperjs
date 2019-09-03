@@ -3,7 +3,7 @@ import typeof { Path } from 'paper';
 
 import type { MouseEventHandler } from '@psychobolt/react-paperjs';
 
-type PathEventHandler = (path: Path) => any;
+type PathEventHandler = (path: Path, pathProps: Object) => any;
 
 export type ToolDefaultProps = {
   onMouseDown: MouseEventHandler,

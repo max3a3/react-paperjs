@@ -50,10 +50,10 @@ class LineTool extends PathTool<Props> {
 
   onMouseUp = (toolEvent: ToolEvent) => {
     const { path } = this;
-    const { onMouseUp, onPathAdd } = this.props;
+    const { onMouseUp, onPathAdd,pathProps } = this.props;
     if (path) {
       path.selected = false;
-      onPathAdd(path);
+      onPathAdd(path,pathProps);
       this.path = null;
     }
     onMouseUp(toolEvent);

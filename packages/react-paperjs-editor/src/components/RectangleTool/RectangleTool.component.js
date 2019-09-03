@@ -83,7 +83,7 @@ class RectangleTool extends PathTool<Props> {
         selected: false,
         ...pathProps,
       });
-      onPathAdd(path);
+      onPathAdd(path,pathProps);
       this.path = null;
       this.start = null;
     }
