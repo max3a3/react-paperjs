@@ -1,5 +1,5 @@
 {
-  "name": "@psychobolt/react-paperjs-editor",
+  "name": "@max3a3/react-paperjs-editor",
   "version": "0.0.10",
   "description": "A library of common editor components for React Paper.js",
   "main": "./dist/index.js",
