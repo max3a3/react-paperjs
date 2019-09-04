@@ -1,5 +1,5 @@
 {
-  "name": "@psychobolt/react-paperjs",
+  "name": "@max3a3/react-paperjs",
   "version": "0.0.56",
   "description": "React Fiber renderer and component container for Paper.js",
   "main": "./dist/index.js",
@@ -25,7 +25,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "bootstrap": "yarn install && lerna bootstrap",
-    "dist": "npm run build && lerna publish"
+    "dist": "npm run build && lerna publish",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
