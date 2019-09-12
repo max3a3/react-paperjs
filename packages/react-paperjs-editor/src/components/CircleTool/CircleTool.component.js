@@ -30,7 +30,7 @@ class CircleTool extends PathTool<Props> {
 
   onMouseDown = (toolEvent: ToolEvent) => {
     const { pathProps, onMouseDown, onPathInit, paper } = this.props;
-    if (toolEvent.event.type==='touchstart' || toolEvent.event.button === MOUSE_LEFT_CODE) {
+    if (toolEvent.event.type === 'touchstart' || toolEvent.event.button === MOUSE_LEFT_CODE) {
       const { Path, Color } = paper;
       const path = new Path.Circle({
         center: toolEvent.point,
@@ -46,7 +46,7 @@ class CircleTool extends PathTool<Props> {
 
   onMouseDrag = (toolEvent: ToolEvent) => {
     const { onMouseDrag } = this.props;
-    if (toolEvent.event.type==='touchmove' || toolEvent.event.buttons === 1) {
+    if (toolEvent.event.type === 'touchmove' || toolEvent.event.buttons === 1) {
       const { path } = this;
       path.scale(toolEvent.point.getDistance(path.position) / (path.bounds.width / 2));
     }

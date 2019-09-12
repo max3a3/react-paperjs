@@ -29,7 +29,7 @@ class RectangleTool extends PathTool<Props> {
 
   onMouseDown = (toolEvent: ToolEvent) => {
     const { pathProps, onMouseDown, onPathInit, paper } = this.props;
-    if (toolEvent.event.button === MOUSE_LEFT_CODE) {
+    if (toolEvent.event.type === 'touchstart' || toolEvent.event.button === MOUSE_LEFT_CODE) {
       const { Path, Color } = paper;
       const start = toolEvent.point;
       const path = new Path.Rectangle({
@@ -47,7 +47,7 @@ class RectangleTool extends PathTool<Props> {
 
   onMouseDrag = (toolEvent: ToolEvent) => {
     const { onMouseDrag } = this.props;
-    if (toolEvent.event.buttons === 1) {
+    if (toolEvent.event.type === 'touchmove' || toolEvent.event.buttons === 1) {
       const { path, start } = this;
       const { bounds } = path;
       const offset = toolEvent.point.subtract(start);

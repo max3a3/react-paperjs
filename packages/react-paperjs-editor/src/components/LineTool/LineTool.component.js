@@ -28,7 +28,7 @@ class LineTool extends PathTool<Props> {
 
   onMouseDown = (toolEvent: ToolEvent) => {
     const { pathProps, onMouseDown, onPathInit, paper } = this.props;
-    if (toolEvent.event.button === MOUSE_LEFT_CODE) {
+    if (toolEvent.event.type === 'touchstart' || toolEvent.event.button === MOUSE_LEFT_CODE) {
       const path = new paper.Path(pathProps);
       path.add(toolEvent.point);
       this.path = path;
@@ -40,7 +40,7 @@ class LineTool extends PathTool<Props> {
   onMouseDrag = (toolEvent: ToolEvent) => {
     const { path } = this;
     const { onMouseDrag } = this.props;
-    if (toolEvent.event.buttons === 1) {
+    if (toolEvent.event.type === 'touchmove' || toolEvent.event.buttons === 1) {
       path.removeSegment(1);
       path.addSegment(toolEvent.point);
       path.selected = true;
