@@ -76,6 +76,7 @@ class CircleTool extends PathTool<Props> {
         onMouseDown={this.onMouseDown}
         onMouseDrag={this.onMouseDrag}
         onMouseUp={this.onMouseUp}
+        minDistance={1}
       />
     );
   }
