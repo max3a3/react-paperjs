@@ -38,7 +38,7 @@ module.exports = {
     [
       'lodash',
       {
-        id: ['lodash', 'recompose'],
+        id: ['lodash'],
       },
     ],
     [
@@ -55,6 +55,11 @@ module.exports = {
     'babel-plugin-styled-components',
   ],
   env: {
+    commonjs: {
+      plugins: [
+        '@babel/plugin-transform-modules-commonjs',
+      ],
+    },
     test: {
       plugins: [
         '@babel/plugin-transform-modules-commonjs',

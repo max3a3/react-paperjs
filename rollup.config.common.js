@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import minimatch from 'minimatch';
-import alias from 'rollup-plugin-alias';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
+import builtins from 'builtin-modules';
+import alias from '@rollup/plugin-alias';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
 
 const ROOT_RESOLVE = path.resolve();
 
@@ -31,7 +32,9 @@ const config = {
   input: path.resolve(ROOT_RESOLVE, 'src', 'index.js'),
   plugins: [
     alias({
-      paper: 'paper/dist/paper-core',
+      entries: {
+        paper: 'paper/dist/paper-core',
+      },
     }),
     resolve(),
     commonjs({
@@ -42,6 +45,7 @@ const config = {
     }),
   ],
   external: [
+    ...builtins,
     '@psychobolt/react-paperjs',
     'paper/dist/paper-core',
     'react',
